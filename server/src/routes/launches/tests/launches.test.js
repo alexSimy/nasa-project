@@ -62,15 +62,16 @@ describe('Launches API', ()=>{
 
         test('It should respond with 200 success for numerical date', async() => {
             const response = await request(app)
-            .post('/v1/launches')
-            .send(completeLaunchDataWithNumericalDate)
-            .expect('Content-Type',/json/)
-            .expect(201);
+                .post('/v1/launches')
+                .send(completeLaunchDataWithNumericalDate)
+                .expect('Content-Type',/json/)
+                .expect(201);
     
-            const requestDate = new Date(completeLaunchData.launchDate).valueOf();
+            const requestDate = new Date(completeLaunchDataWithNumericalDate.launchDate).valueOf();
             const responseDate = new Date(response.body.launchDate).valueOf();
+            console.log('It should respond with 200 success for numerical date', requestDate, responseDate);
     
-            expect(responseDate).toBe(requestDate);
+            expect(requestDate).toBe(responseDate);
             expect(response.body).toMatchObject(launchDataWithoutDate);
     
             expect(response.body).toMatchObject(launchDataWithoutDate);
