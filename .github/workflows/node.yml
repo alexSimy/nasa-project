@@ -8,7 +8,7 @@ jobs:
   build: 
     env:
       CI: true
-      MONGO_URL_TEST: mongodb://localhost/nasa
+      MONGO_URL_TEST: mongodb://localhost/nasa-test
       # PORT: 5000
     strategy:
       matrix:
@@ -25,6 +25,7 @@ jobs:
         uses: supercharge/mongodb-github-action@1.11.0
         with:
           mongodb-version: ${{ matrix.mongodb-version }}
+          mongodb-replica-set: nasa-test
       - run: npm ci
       - run: npm run build --prefix ./client
       - run: npm run test
