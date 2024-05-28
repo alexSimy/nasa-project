@@ -1,3 +1,3 @@
-### NASA PROJECT EXAMPLE ###
+# NASA PROJECT EXAMPLE #
 
-# This example project was done during the node.js course on zerotomastery.io #
+### This example project was done during the node.js course on zerotomastery.io ###
