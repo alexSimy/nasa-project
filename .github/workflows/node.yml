@@ -1,9 +1,9 @@
 name: NASA Project Example CI
 on:
   push: 
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 jobs:
   build: 
     runs-on: ubuntu-latest
@@ -15,6 +15,3 @@ jobs:
           node-version: '20'
       - run: npm install
       - run: npm run build --prefix ./client
-
-  #deploy:
-    #needs: build
