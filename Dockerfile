@@ -17,7 +17,7 @@ RUN npm run install-server --omit=dev
 #copy only client code because at this stage we're building only the client
 COPY client/ client/
 #building the client-side app and exporting it to server/public
-RUN npm run build --prefix client
+RUN BUILD_PATH=../server/public npm run build --prefix client
 
 #copy the server in order to be able to start the app
 COPY server/ server/
